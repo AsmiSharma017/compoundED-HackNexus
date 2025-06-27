@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CompoundED - Learn DeFi, Risk-Free</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(6px); }
+    .color-sunset { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+    .color-violet { background: linear-gradient(135deg, #f3e7e9 0%, #e3eeff 100%); }
+    .color-classic { background: linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%); }
+    .feature-card:hover { transform: scale(1.04); box-shadow: 0 8px 32px rgba(0,0,0,0.12);}
+    .transition { transition: all 0.2s; }
+  </style>
+</head>
+<body id="body" class="color-sunset min-h-screen font-sans transition">
+
+  <!-- Navbar -->
+  <nav class="glass shadow fixed w-full top-0 left-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616490.png" alt="Mascot" class="w-10 h-10" />
+        <span class="text-pink-700 font-bold text-xl" data-translate="CompoundED">CompoundED</span>
+      </div>
+      <div class="space-x-4 flex items-center">
+        <a href="index.html" class="text-pink-700 font-semibold underline" data-translate="Home">Home</a>
+        <a href="dashboard.html" class="text-gray-700 hover:text-pink-700 font-semibold" data-translate="Dashboard">Dashboard</a>
+        <a href="quiz.html" class="text-gray-700 hover:text-pink-700 font-semibold" data-translate="Quiz">Quiz</a>
+        <a href="glossary.html" class="text-gray-700 hover:text-pink-700 font-semibold" data-translate="Glossary">Glossary</a>
+        <a href="impact.html" class="text-gray-700 hover:text-pink-700 font-semibold" data-translate="Impact">Impact</a>
+        <!-- Language Switcher -->
+        <select id="langSwitch" onchange="setLang(this.value)" class="ml-4 px-2 py-1 rounded border">
+          <option value="en">🇬🇧 English</option>
+          <option value="hi">🇮🇳 हिन्दी</option>
+        </select>
+        <!-- Color Scheme Switcher -->
+        <select id="colorSwitch" onchange="setColor(this.value)" class="ml-2 px-2 py-1 rounded border">
+          <option value="sunset"> Sunset</option>
+          <option value="violet"> Violet</option>
+          <option value="classic"> Classic</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <main class="max-w-4xl mx-auto pt-32 pb-16 px-4">
+    <div class="flex flex-col md:flex-row items-center gap-8">
+      <div class="flex-1 text-center md:text-left">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-pink-800 mb-4 drop-shadow" data-translate="Welcome to CompoundED">Welcome to CompoundED</h1>
+        <p class="text-xl text-gray-700 mb-6" data-translate="Learn DeFi, lending, and financial literacy risk-free with our interactive, gamified platform.">
+          Learn DeFi, lending, and financial literacy <span class="bg-yellow-200 px-2 rounded">risk-free</span> with our interactive, gamified platform.
+        </p>
+        <a href="dashboard.html" class="inline-block px-8 py-3 bg-pink-600 text-white rounded-xl font-bold text-lg shadow hover:bg-pink-700 transition" data-translate="Get Started">Get Started</a>
+      </div>
+      <div class="flex-1 flex justify-center">
+        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_8wREpI.json" background="transparent" speed="1" style="width: 220px; height: 220px;" loop autoplay></lottie-player>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="glass rounded-2xl shadow-lg p-6 text-center feature-card transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="w-14 mx-auto mb-2" />
+        <h3 class="font-bold text-lg text-pink-700 mb-1" data-translate="Gamified Learning">Gamified Learning</h3>
+        <p class="text-gray-600" data-translate="Earn badges, complete daily challenges, and climb the leaderboard as you master DeFi concepts.">Earn badges, complete daily challenges, and climb the leaderboard as you master DeFi concepts.</p>
+      </div>
+      <div class="glass rounded-2xl shadow-lg p-6 text-center feature-card transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png" class="w-14 mx-auto mb-2" />
+        <h3 class="font-bold text-lg text-pink-700 mb-1" data-translate="Risk-Free Simulation">Risk-Free Simulation</h3>
+        <p class="text-gray-600" data-translate="Practice lending, borrowing, and earning interest with zero real money or wallet required.">Practice lending, borrowing, and earning interest with zero real money or wallet required.</p>
+      </div>
+      <div class="glass rounded-2xl shadow-lg p-6 text-center feature-card transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png" class="w-14 mx-auto mb-2" />
+        <h3 class="font-bold text-lg text-pink-700 mb-1" data-translate="Accessible & Multilingual">Accessible & Multilingual</h3>
+        <p class="text-gray-600" data-translate="Switch between English and Hindi. Designed for all learners, everywhere.">Switch between English and Hindi. Designed for all learners, everywhere.</p>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="mt-16 glass rounded-2xl shadow-lg p-8">
+      <h2 class="text-2xl font-bold text-pink-700 mb-4 text-center" data-translate="How CompoundED Works">How CompoundED Works</h2>
+      <ol class="list-decimal ml-6 text-lg text-gray-700 space-y-2">
+        <li data-translate="Connect your (mock) wallet and explore your dashboard.">Connect your (mock) wallet and explore your dashboard.</li>
+        <li data-translate="Try lending or borrowing tokens, watch your balances and risk gauge update live.">Try lending or borrowing tokens, watch your balances and risk gauge update live.</li>
+        <li data-translate="Take quizzes and complete glossary challenges to earn badges.">Take quizzes and complete glossary challenges to earn badges.</li>
+        <li data-translate="Track your progress, climb the leaderboard, and become DeFi smart!">Track your progress, climb the leaderboard, and become DeFi smart!</li>
+      </ol>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="mt-16">
+      <h2 class="text-2xl font-bold text-pink-700 mb-6 text-center" data-translate="What Students Say">What Students Say</h2>
+      <div class="flex flex-col md:flex-row gap-8 justify-center">
+        <div class="glass rounded-xl shadow-lg p-6 flex-1">
+          <p class="text-gray-700 italic" data-translate='"I finally understand how DeFi lending works, and the badges made it fun!"'>"I finally understand how DeFi lending works, and the badges made it fun!"</p>
+          <div class="mt-4 flex items-center gap-2">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full" />
+            <span class="font-semibold text-pink-700" data-translate="Aman, Student">Aman, Student</span>
+          </div>
+        </div>
+        <div class="glass rounded-xl shadow-lg p-6 flex-1">
+          <p class="text-gray-700 italic" data-translate='"The Hindi translation helped my entire class learn together."'>"The Hindi translation helped my entire class learn together."</p>
+          <div class="mt-4 flex items-center gap-2">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full" />
+            <span class="font-semibold text-pink-700" data-translate="Priya, Teacher">Priya, Teacher</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="mt-16 text-center">
+      <h2 class="text-2xl font-bold text-pink-700 mb-4" data-translate="Ready to start your DeFi journey?">Ready to start your DeFi journey?</h2>
+      <a href="dashboard.html" class="inline-block px-8 py-3 bg-pink-600 text-white rounded-xl font-bold text-lg shadow hover:bg-pink-700 transition" data-translate="Go to Dashboard">Go to Dashboard</a>
+    </section>
+  </main>
+
+  <script>
+    // TRANSLATIONS
+    const translations = {
+      en: {
+        "CompoundED": "CompoundED",
+        "Home": "Home",
+        "Dashboard": "Dashboard",
+        "Quiz": "Quiz",
+        "Glossary": "Glossary",
+        "Impact": "Impact",
+        "Welcome to CompoundED": "Welcome to CompoundED",
+        "Learn DeFi, lending, and financial literacy risk-free with our interactive, gamified platform.": "Learn DeFi, lending, and financial literacy risk-free with our interactive, gamified platform.",
+        "Get Started": "Get Started",
+        "Gamified Learning": "Gamified Learning",
+        "Earn badges, complete daily challenges, and climb the leaderboard as you master DeFi concepts.": "Earn badges, complete daily challenges, and climb the leaderboard as you master DeFi concepts.",
+        "Risk-Free Simulation": "Risk-Free Simulation",
+        "Practice lending, borrowing, and earning interest with zero real money or wallet required.": "Practice lending, borrowing, and earning interest with zero real money or wallet required.",
+        "Accessible & Multilingual": "Accessible & Multilingual",
+        "Switch between English and Hindi. Designed for all learners, everywhere.": "Switch between English and Hindi. Designed for all learners, everywhere.",
+        "How CompoundED Works": "How CompoundED Works",
+        "Connect your (mock) wallet and explore your dashboard.": "Connect your (mock) wallet and explore your dashboard.",
+        "Try lending or borrowing tokens, watch your balances and risk gauge update live.": "Try lending or borrowing tokens, watch your balances and risk gauge update live.",
+        "Take quizzes and complete glossary challenges to earn badges.": "Take quizzes and complete glossary challenges to earn badges.",
+        "Track your progress, climb the leaderboard, and become DeFi smart!": "Track your progress, climb the leaderboard, and become DeFi smart!",
+        "What Students Say": "What Students Say",
+        '"I finally understand how DeFi lending works, and the badges made it fun!"': '"I finally understand how DeFi lending works, and the badges made it fun!"',
+        "Aman, Student": "Aman, Student",
+        '"The Hindi translation helped my entire class learn together."': '"The Hindi translation helped my entire class learn together."',
+        "Priya, Teacher": "Priya, Teacher",
+        "Ready to start your DeFi journey?": "Ready to start your DeFi journey?",
+        "Go to Dashboard": "Go to Dashboard"
+      },
+      hi: {
+        "CompoundED": "कंपाउंडईडी",
+        "Home": "होम",
+        "Dashboard": "डैशबोर्ड",
+        "Quiz": "क्विज़",
+        "Glossary": "शब्दकोश",
+        "Impact": "प्रभाव",
+        "Welcome to CompoundED": "कंपाउंडईडी में आपका स्वागत है",
+        "Learn DeFi, lending, and financial literacy risk-free with our interactive, gamified platform.": "हमारे इंटरैक्टिव, गेमिफाइड प्लेटफार्म के साथ DeFi, लेंडिंग और वित्तीय साक्षरता को बिना जोखिम के सीखें।",
+        "Get Started": "शुरू करें",
+        "Gamified Learning": "गेमिफाइड लर्निंग",
+        "Earn badges, complete daily challenges, and climb the leaderboard as you master DeFi concepts.": "बैज कमाएँ, डेली चैलेंज पूरे करें और DeFi कॉन्सेप्ट्स में महारत हासिल कर लीडरबोर्ड पर चढ़ें।",
+        "Risk-Free Simulation": "बिना जोखिम सिमुलेशन",
+        "Practice lending, borrowing, and earning interest with zero real money or wallet required.": "लेंडिंग, उधारी और ब्याज कमाने का अभ्यास करें—बिना असली पैसे या वॉलेट के।",
+        "Accessible & Multilingual": "सुलभ और बहुभाषी",
+        "Switch between English and Hindi. Designed for all learners, everywhere.": "अंग्रेज़ी और हिंदी में स्विच करें। सभी के लिए डिज़ाइन किया गया।",
+        "How CompoundED Works": "कंपाउंडईडी कैसे काम करता है",
+        "Connect your (mock) wallet and explore your dashboard.": "अपना (मॉक) वॉलेट कनेक्ट करें और डैशबोर्ड देखें।",
+        "Try lending or borrowing tokens, watch your balances and risk gauge update live.": "टोकन जमा या उधार लें, बैलेंस और जोखिम गेज को लाइव देखें।",
+        "Take quizzes and complete glossary challenges to earn badges.": "क्विज़ लें और शब्दकोश चुनौतियाँ पूरी कर बैज कमाएँ।",
+        "Track your progress, climb the leaderboard, and become DeFi smart!": "अपनी प्रगति ट्रैक करें, लीडरबोर्ड पर चढ़ें और DeFi एक्सपर्ट बनें!",
+        "What Students Say": "छात्र क्या कहते हैं",
+        '"I finally understand how DeFi lending works, and the badges made it fun!"': '"अब मुझे DeFi लेंडिंग समझ में आ गई है, और बैज ने इसे मज़ेदार बना दिया!"',
+        "Aman, Student": "अमन, छात्र",
+        '"The Hindi translation helped my entire class learn together."': '"हिंदी अनुवाद ने मेरी पूरी क्लास को साथ में सीखने में मदद की।"',
+        "Priya, Teacher": "प्रिया, शिक्षिका",
+        "Ready to start your DeFi journey?": "क्या आप DeFi यात्रा शुरू करने के लिए तैयार हैं?",
+        "Go to Dashboard": "डैशबोर्ड पर जाएँ"
+      }
+    };
+
+    function setLang(lang) {
+      localStorage.setItem('lang', lang);
+      applyLang();
+    }
+    function applyLang() {
+      const lang = localStorage.getItem('lang') || 'en';
+      document.querySelectorAll('[data-translate]').forEach(el => {
+        const key = el.getAttribute('data-translate');
+        el.textContent = translations[lang][key] || key;
+      });
+    }
+    // Color schemes
+    function setColor(scheme) {
+      const body = document.getElementById('body');
+      body.classList.remove('color-sunset', 'color-violet', 'color-classic');
+      if (scheme === "sunset") body.classList.add('color-sunset');
+      if (scheme === "violet") body.classList.add('color-violet');
+      if (scheme === "classic") body.classList.add('color-classic');
+      localStorage.setItem('color', scheme);
+    }
+    // On load, apply language and color
+    window.onload = function() {
+      const lang = localStorage.getItem('lang') || 'en';
+      document.getElementById('langSwitch').value = lang;
+      applyLang();
+      const color = localStorage.getItem('color') || 'sunset';
+      document.getElementById('colorSwitch').value = color;
+      setColor(color);
+    };
+  </script>
+</body>
+</html>
