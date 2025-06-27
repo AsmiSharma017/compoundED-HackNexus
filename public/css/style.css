@@ -1,0 +1,15 @@
+body { font-family: sans-serif; background: #f3f4f6; margin: 0; }
+.container { max-width: 800px; margin: 80px auto 0 auto; padding: 24px; background: #fff; border-radius: 16px; box-shadow: 0 2px 8px #0001; }
+nav { background: #fff; box-shadow: 0 2px 4px #0001; padding: 12px 24px; position: fixed; top: 0; left: 0; width: 100%; z-index: 10; }
+nav a, nav button { margin-right: 16px; font-weight: bold; color: #6366f1; text-decoration: none; background: none; border: none; cursor: pointer; }
+nav a:hover, nav button:hover { color: #1e40af; }
+.mascot { width: 72px; height: 72px; }
+.btn { display: inline-block; background: #6366f1; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; }
+.btn:hover { background: #4338ca; }
+.dashboard-stats { display: flex; gap: 32px; margin-bottom: 24px; }
+.dashboard-actions button, .dashboard-actions a { margin-right: 8px; }
+.apy-section, .simulation-section, .risk-section { margin-top: 16px; }
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0006; align-items: center; justify-content: center; z-index: 100; }
+.modal.active { display: flex; }
+.modal-content { background: #fff; padding: 24px; border-radius: 12px; min-width: 320px; }
+.badge { background: #fbbf24; color: #1f2937; border-radius: 9999px; padding: 0.25em 0.75em; font-weight: bold; margin-right: 0.5em;}
