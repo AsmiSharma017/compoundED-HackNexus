@@ -1,4 +1,5 @@
 # compoundED-HackNexus
+Deployed website: https://compound-ed-hack-nexus.vercel.app/
 It includes:  
 - Project explanation  
 - Features  
@@ -54,7 +55,7 @@ CompoundED supports both **English and Hindi** (with instant language switching)
 
 ## Demo
 
-> **Try it live:**  
+> **Try it live:**  https://compound-ed-hack-nexus.vercel.app/
 
 
 1. **Clone this repository:**
